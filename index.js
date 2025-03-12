@@ -1,9 +1,12 @@
 class JSProblems {
     constructor() { }
 
+    add(a, b) {
+        console.log('method =>', a + b);
+    }
     getDuplicateValuesFromArray() {
         // Write a program to output all duplicates in array.
-        let array = [1, 4, 5, 1, 3, 7, 7, 7, 8, 8, 6, 3]; //1,7, 8, 3
+        let array = [1, 1, 4, 5, 1, 3, 7, 7, 7, 8, 8, 6, 3]; //1,7, 8, 3
         let counts = {}; let output = [];
         for (let item of array) {
             counts[item] = counts[item] + 1 || 1;
@@ -670,91 +673,98 @@ class JSProblems {
         return num > 1;
     }
 
-    getIds(arr = [ {id:1, data: [{id:11,data:[{id:111}]}]}, 
-        {id:2,data:[{id:21,data:[{id:1234}]}]}]) {
+    getIds(arr = [{ id: 1, data: [{ id: 11, data: [{ id: 111 }] }] },
+    { id: 2, data: [{ id: 21, data: [{ id: 1234 }] }] }]) {
 
-        let output = arr.reduce(function(accum, curV) {
-          accum.push(curV.id);
-          if (Array.isArray(curV.data)) {
-            accum = accum.concat(getIds(curV.data));
-          } 
-          return accum;
+        let output = arr.reduce(function (accum, curV) {
+            accum.push(curV.id);
+            if (Array.isArray(curV.data)) {
+                accum = accum.concat(getIds(curV.data));
+            }
+            return accum;
         }, []);
         return output;
-        
-      }
+
+    }
     //   https://onecompiler.com/javascript/3xmmdqeer
     // https://onecompiler.com/javascript/3xmmez5nk
-      sortedObj(arry = [{name:'repo',number: 978624562},
-      {name:'Demo',number: 978624562},
-      {name:'demo1',number: 978624562},
-      {name:'Falguni',number: 978624562},
-      {name:'diro',number: 978624562}]) {
+    sortedObj(arry = [{ name: 'repo', number: 978624562 },
+    { name: 'Demo', number: 978624562 },
+    { name: 'demo1', number: 978624562 },
+    { name: 'Falguni', number: 978624562 },
+    { name: 'diro', number: 978624562 }]) {
 
-        let output = arry.reduce(function(accum, curV){
-          
-          let char = curV.name[0].toLowerCase();
-          //console.log(curV);
-          if (accum[char]){
-            accum[char].push(curV);
-          } else {
-            accum[char] = [curV];
-          };
-          //console.log(curV.name[0].toLowerCase());
-          
-          return accum;
-          
-          
+        let output = arry.reduce(function (accum, curV) {
+
+            let char = curV.name[0].toLowerCase();
+            //console.log(curV);
+            if (accum[char]) {
+                accum[char].push(curV);
+            } else {
+                accum[char] = [curV];
+            };
+            //console.log(curV.name[0].toLowerCase());
+
+            return accum;
+
+
         }, {});
-        
-        return output;
-        
-      }
 
-      function maxSubArraySum (inputArry = [-3, -3, 8, -3, 1, 1, 5, -4]) {
+        return output;
+
+    }
+
+    maxSubArraySum(inputArry = [-3, -3, 8, -3, 1, 1, 5, -4]) {
 
         let sum = 0;
         let maxSum = 0;
         let subArray = [];
-      
-        for (let i = 0; i< inputArry.length; i++) {
-          let item = inputArry[i];
-          sum = sum + item;
-          
-          if (sum > maxSum) {
-            maxSum = sum;
-            
-          }
-          if (sum < 0) {
-            sum = 0;
-          }
-          
-          //maxSum = Math.max(sum, maxSum);
-          
-          console.log(sum, maxSum);
-          if (sum > 0 && i < (inputArry.length - 1)){
-           
-           // console.log(item);
-           
-            subArray.push(item);
-            
-       
-          }
-          
-          
-          
-          
-       
+
+        for (let i = 0; i < inputArry.length; i++) {
+            let item = inputArry[i];
+            sum = sum + item;
+
+            if (sum > maxSum) {
+                maxSum = sum;
+
+            }
+            if (sum < 0) {
+                sum = 0;
+            }
+
+            //maxSum = Math.max(sum, maxSum);
+
+            console.log(sum, maxSum);
+            if (sum > 0 && i < (inputArry.length - 1)) {
+
+                // console.log(item);
+
+                subArray.push(item);
+
+
+            }
+
+
+
+
+
         }
-      
+
         console.log(maxSum, subArray);
-    
+
     }
 
 }
 
 const js = new JSProblems();
-console.log(js.isPrime());
+
+function add(a, b) {
+    console.log('function => ', a + b);
+}
+
+add(3, 4);
+js.add(5, 5);
+//console.log();
 
 //js.stringCompression('ppppshkshdkjjjjjj');
 // console.log(js.reducePollyfill());
