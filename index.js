@@ -316,48 +316,7 @@ class JSProblems {
     }
 
 
-    // Check if two strings are anagrams of each other.
-    // One string is an anagram of another if it uses exact same characters
-    // in exact same quantity. Only consider word characters, and make sure the
-    // function is case insensitive.
-    // --- Examples
-    //   anagrams('heart', 'earth') --> True
-    //   anagrams('heart', '  earth') --> True
-    //   anagrams('Heart!', 'EARTH') --> True
-    //   anagrams('lol', 'lolc') --> False
 
-    // Anagram of https://www.geeksforgeeks.org/check-whether-two-strings-are-anagram-of-each-other/
-
-    anagramsSolution1(stringA = 'heart', stringB = 'earth') {
-        stringA = stringA.toLowerCase().replace(/[^A-Z0-9]+/gi, "");
-        stringB = stringB.toLowerCase().replace(/[^A-Z0-9]+/gi, "");
-        // check for same string
-        if (stringA === stringB) return true;
-        // check for same length, if not return false
-        if (stringA.length !== stringB.length) return false;
-
-        const stringACounts = {}; // count all chars
-        for (let char of stringA) {
-            stringACounts[char] = stringACounts[char] + 1 || 1;
-        }
-
-        for (let char of stringB) {
-            if (!stringACounts[char]) { // if no char from strB 
-                return false;
-            } else {
-                stringACounts[char]--;
-            }
-        }
-        return true;
-    }
-
-    anagramsSolution2(stringA = 'Heart!', stringB = 'EARTH') {
-        stringA = stringA.toLowerCase().replace(/[\W_]+/gi, "");
-        stringB = stringB.toLowerCase().replace(/[\W_]+/gi, "");
-        stringA = stringA.split("").sort().join("");   // O(n) + O(nlogn) + O(n) = O(nlogn + 2n) = O(nlogn)
-        stringB = stringB.split("").sort().join("");
-        return stringA === stringB;
-    }
 
     // Given a string, return true or false depending if the string
     // is a palindrome.  Palindromes are words that read the same backwards

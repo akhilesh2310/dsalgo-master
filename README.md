@@ -22,3 +22,5 @@ A comprehensive guide and practice repository for mastering **Data Structures an
 ```bash
 git clone https://github.com/akhilesh2310/dsalgo-master.git
 cd dsalgo-master
+npm install
+npx mocha [folder/file].js // to run along with test cases

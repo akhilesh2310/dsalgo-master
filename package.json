@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,5 +13,8 @@
   "devDependencies": {
     "chai": "^5.2.0",
     "mocha": "^11.1.0"
+  },
+  "dependencies": {
+    "save-dev": "^0.0.1-security"
   }
 }

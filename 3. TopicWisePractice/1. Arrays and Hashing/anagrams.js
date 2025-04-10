@@ -8,54 +8,54 @@
 //   anagrams('Heart!', 'EARTH') --> True
 //   anagrams('lol', 'lolc') --> False
 
+// Anagram of https://www.geeksforgeeks.org/check-whether-two-strings-are-anagram-of-each-other/
 // Run this code using npx mocha index.js or mocha index.js
-function anagrams(stringA, stringB) {
-  stringA = stringA.toLowerCase().replace(/[^A-Z0-9]+/gi, "");
-  stringB = stringB.toLowerCase().replace(/[^A-Z0-9]+/gi, "");
 
+class AnagramSolutions {
 
-  if (stringA.length !== stringB.length) {
-    return false;
-  }
+  anagramsSolution1 = (stringA = 'heart', stringB = 'earth') => {
+    stringA = stringA.toLowerCase().replace(/[^A-Z0-9]+/gi, "");
+    stringB = stringB.toLowerCase().replace(/[^A-Z0-9]+/gi, "");
+    // check for same string
+    if (stringA === stringB) return true;
+    // check for same length, if not return false
+    if (stringA.length !== stringB.length) return false;
 
-  if (stringA === stringB) {
+    const stringACounts = {}; // count all chars
+    for (let char of stringA) {
+      stringACounts[char] = stringACounts[char] + 1 || 1;
+    }
+
+    for (let char of stringB) {
+      if (!stringACounts[char]) { // if no char from strB 
+        return false;
+      } else {
+        stringACounts[char]--;
+      }
+    }
     return true;
   }
 
-  const stringACounts = {};
-
-  for (let char of stringA) {
-    stringACounts[char] = stringACounts[char] + 1 || 1;
+  anagramsSolution2 = (stringA, stringB) => {
+    stringA = stringA.toLowerCase().replace(/[\W_]+/gi, "");
+    stringB = stringB.toLowerCase().replace(/[\W_]+/gi, "");
+    stringA = stringA
+      .split("") // O(n)
+      .sort() // O(nlogn)
+      .join(""); // // O(n)
+    //O(nlogn + 2n) = O(nlogn)
+    stringB = stringB
+      .split("")
+      .sort()
+      .join("");
+    return stringA === stringB;
   }
-  console.log(stringACounts);
 
-  for (let char of stringB) {
-    if (!stringACounts[char]) {
-      return false;
-    } else {
-      stringACounts[char]--;
-    }
-  }
-  console.log(stringACounts);
-  return true;
 }
 
-function anagrams1(stringA, stringB) {
-  stringA = stringA.toLowerCase().replace(/[\W_]+/gi, "");
-  stringB = stringB.toLowerCase().replace(/[\W_]+/gi, "");
-  stringA = stringA
-    .split("") // O(n)
-    .sort() // O(nlogn)
-    .join(""); // // O(n)
-  //O(nlogn + 2n) = O(nlogn)
-  stringB = stringB
-    .split("")
-    .sort()
-    .join("");
-  return stringA === stringB;
-}
+const obj = new AnagramSolutions();
+const anagrams = obj.anagramsSolution2; // change method name here to test different solution
 
-console.log(anagrams("earth", "hearth"));
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
 //    ) (   | (    \/| (    \/   ) (     | (    \/| (   ) || (    \/| (    \/| (    \/
@@ -79,8 +79,7 @@ console.log(anagrams("earth", "hearth"));
 //                          ______ ______ ______ ______ ______
 //                         |______|______|______|______|______|
 
-mocha.setup("bdd");
-const { assert } = chai;
+import { assert } from "chai";
 
 describe("Anagrams", () => {
   it("works if case sensitivity and non word characters NOT taken into account", () => {
@@ -104,5 +103,3 @@ describe("Anagrams", () => {
     assert.equal(anagrams("lol", "lolc"), false);
   });
 });
-
-mocha.run();
