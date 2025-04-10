@@ -654,15 +654,21 @@ class JSProblems {
             "[": "]",
         };
         const stack = [];
+
         for (let char of str) {
             if (obj[char]) {
                 stack.push(char);
-            } else if (obj[stack[stack.length - 1]] === char) {
-                stack.pop();
+            } else if (char === ")" || char === "}" || char === "]") {
+                // Check if stack is empty or top of stack does not match
+                if (stack.length === 0 || obj[stack.pop()] !== char) {
+                    return false;
+                }
             }
         }
+
         return stack.length === 0;
     }
+
 
     isPrime(num = 4) {
         for (let i = 2; i < num; i++) {
@@ -762,10 +768,12 @@ function add(a, b) {
     console.log('function => ', a + b);
 }
 
-add(3, 4);
-js.add(5, 5);
-//console.log();
-
+// add(3, 4);
+// js.add(5, 5);
+// console.log(js.checkValidParenthesis());
+// console.log(js.checkValidParenthesis("{ ( a + b } )")); // Expected: false, Output: true ❌
+// console.log(js.checkValidParenthesis("{(})"));         // Expected: false, Output: true ❌
+console.log(js.checkValidParenthesis("}"));           // Expected: false, Output: true ❌
 //js.stringCompression('ppppshkshdkjjjjjj');
 // console.log(js.reducePollyfill());
 // if (js.checkValidParenthesis()) {

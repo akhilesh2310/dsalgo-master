@@ -8,9 +8,11 @@
 //   anagrams('Heart!', 'EARTH') --> True
 //   anagrams('lol', 'lolc') --> False
 
+// Run this code using npx mocha index.js or mocha index.js
 function anagrams(stringA, stringB) {
   stringA = stringA.toLowerCase().replace(/[^A-Z0-9]+/gi, "");
   stringB = stringB.toLowerCase().replace(/[^A-Z0-9]+/gi, "");
+
 
   if (stringA.length !== stringB.length) {
     return false;
@@ -25,6 +27,7 @@ function anagrams(stringA, stringB) {
   for (let char of stringA) {
     stringACounts[char] = stringACounts[char] + 1 || 1;
   }
+  console.log(stringACounts);
 
   for (let char of stringB) {
     if (!stringACounts[char]) {
@@ -33,7 +36,7 @@ function anagrams(stringA, stringB) {
       stringACounts[char]--;
     }
   }
-
+  console.log(stringACounts);
   return true;
 }
 
@@ -51,6 +54,8 @@ function anagrams1(stringA, stringB) {
     .join("");
   return stringA === stringB;
 }
+
+console.log(anagrams("earth", "hearth"));
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
 //    ) (   | (    \/| (    \/   ) (     | (    \/| (   ) || (    \/| (    \/| (    \/
