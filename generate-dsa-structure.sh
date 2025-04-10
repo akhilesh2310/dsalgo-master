@@ -1,19 +1,56 @@
 #!/bin/bash
 
+echo "📦 Moving folders into topic-wise subfolders..."
 
-# -----------------------------------------
-# 1. Data Structures
-# -----------------------------------------
-mkdir -p "1. Data Structures"/{"Arrays","Strings","Linked Lists","Stacks","Queues","Trees","Binary Search Trees","Heaps","Hash Maps","Graphs","Tries"}
+for folder in *; do
+  if [ -d "$folder" ]; then
+    case "$folder" in
+      anagrams|arrayReveresed|arraySuffle|chunk|maxChar|merge|oddsGreaterThan100|twoSum)
+        target="3. TopicWisePractice/Arrays and Hashing"
+        ;;
+      reverseInt|reverseString|vowels|palindrome|capitalize)
+        target="3. TopicWisePractice/Strings"
+        ;;
+      binarySearch|linearSearch)
+        target="3. TopicWisePractice/Binary Search"
+        ;;
+      BinaryHeap|priorityQueue)
+        target="3. TopicWisePractice/Heaps"
+        ;;
+      sorting|merge)
+        target="3. TopicWisePractice/Sorting"
+        ;;
+      binarySearch)
+        target="3. TopicWisePractice/Binary Search"
+        ;;
+      caesarCipher|stringPatternSearch)
+        target="3. TopicWisePractice/Recursion and Backtracking"
+        ;;
+      stack|queue|steps)
+        target="3. TopicWisePractice/Stack and Queue"
+        ;;
+      linked\ -\ list|LinkedList)
+        target="3. TopicWisePractice/Linked List"
+        ;;
+      Tree|BinarySearchTree|Graph)
+        target="3. TopicWisePractice/Trees and Graphs"
+        ;;
+      pyramid|diagrams)
+        target="3. TopicWisePractice/Dynamic Programming"
+        ;;
+      last\ month)
+        target="3. TopicWisePractice/Greedy"
+        ;;
+      *)
+        echo "❌ No matching topic for '$folder' — skipping."
+        continue
+        ;;
+    esac
 
-# -----------------------------------------
-# 2. Algorithms
-# -----------------------------------------
-mkdir -p "2. Algorithms"/{"Sorting","Searching","Recursion","Backtracking","Dynamic Programming","Greedy","Graph Algorithms","Sliding Window","Two Pointers","Divide and Conquer","Bit Manipulation"}
+    echo "✅ Moving '$folder' → '$target'"
+    mkdir -p "$target"
+    mv "$folder" "$target/"
+  fi
+done
 
-# -----------------------------------------
-# 3. TopicWisePractice
-# -----------------------------------------
-mkdir -p "3. TopicWisePractice"/{"Arrays and Hashing","Two Pointers","Sliding Window","Binary Search","Recursion and Backtracking","Trees and Graphs","Linked List","Stack and Queue","Dynamic Programming","Greedy","Bit Manipulation"}
-
-echo "✅ All DSA folders created successfully."
+echo "✅ All done!"
