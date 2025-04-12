@@ -2,7 +2,7 @@
 
 ## 🔍 What is a Heap?
 
-A **Heap** is a special tree-based data structure that satisfies the **heap property**. [What is Heap Property?](#-what-is-heap-property) 
+A **Heap** is a special tree-based data structure that satisfies the [**heap property**](#-what-is-heap-property).
 There are two main types of heaps:
 
 - **Max Heap**: The key at the root is greater than or equal to the keys of its children, and the same property must be recursively true for all nodes in the binary tree.
