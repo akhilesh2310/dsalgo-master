@@ -20,18 +20,15 @@ A **Hash Map** is a data structure that stores data in **key-value pairs** for f
 ## ⏱️ Time Complexity
 
 | Operation | Average Case | Worst Case |
-|-----------|--------------|------------|
+| --------- | ------------ | ---------- |
 | Insert    | O(1)         | O(n)       |
 | Search    | O(1)         | O(n)       |
 | Delete    | O(1)         | O(n)       |
 
 ---
-
 ## ⚙️ Built-in Methods
 - JS: Map(), Object
 - Java: HashMap
-
----
 
 ## 🔪 JavaScript Examples Using `Map`
 
@@ -110,4 +107,46 @@ public class Main {
 
 ---
 
+## 📜 Common Methods
+
+### JavaScript: Map
+
+| Method       | Description           | Example                        |
+|--------------|------------------------|--------------------------------|
+| set(key, val) | Add/Update key-value   | map.set("a", 10)               |
+| get(key)      | Get value by key       | map.get("a")                  |
+| has(key)      | Check if key exists    | map.has("a")                  |
+| delete(key)   | Remove key             | map.delete("a")               |
+| size          | Number of elements     | map.size                       |
+| clear()       | Remove all entries     | map.clear()                    |
+| forEach()     | Iterate over entries   | map.forEach((v, k) => ...)     |
+
+### Java: HashMap
+
+| Method            | Description           | Example                                  |
+|-------------------|------------------------|------------------------------------------|
+| put(key, val)     | Add/Update key-value   | map.put("a", 10)                         |
+| get(key)          | Get value by key       | map.get("a")                            |
+| containsKey(key)  | Check if key exists    | map.containsKey("a")                    |
+| remove(key)       | Remove key             | map.remove("a")                         |
+| size()            | Number of elements     | map.size()                               |
+| clear()           | Remove all entries     | map.clear()                              |
+| keySet()          | Get all keys           | for (String key : map.keySet())         |
+| values()          | Get all values         | for (String val : map.values())         |
+| entrySet()        | Get key-value pairs    | for (Map.Entry<String, String> e : ...) |
+
+---
+
+## 💡 Real-World Use Cases of Hash Maps
+
+1. **Caching**: Store recently accessed data (e.g., in-memory caching).
+2. **Databases**: Underlying implementation for indexes.
+3. **Counting Frequencies**: Word counts in a text.
+4. **Lookups**: User ID to user data mappings.
+5. **Configurations**: Store settings and configurations.
+6. **Symbol Tables**: Used in compilers and interpreters.
+7. **Routing Tables**: IP address to route mapping.
+8. **Autocompletion**: Fast key-based text suggestions.
+9. **Session Management**: Storing session data for users.
+10. **Graph Representations**: Adjacency list for graphs.
 
