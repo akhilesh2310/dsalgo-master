@@ -134,7 +134,7 @@ public class Main {
 | clear()          | Remove all entries   | map.clear()                              |
 | keySet()         | Get all keys         | for (String key : map.keySet())          |
 | values()         | Get all values       | for (String val : map.values())          |
-| entrySet()       | Get key-value pairs  | for (Map.Entry\<String, String> e : ...) |
+| entrySet()       | Get key-value pairs  | for (Map.Entry<String, String> e : ...)  |
 
 ---
 
@@ -171,3 +171,16 @@ public class Main {
 10. Know limitations — **not thread-safe** (use `ConcurrentHashMap` if needed).
 
 ---
+
+## 🧩 HashMap vs TreeMap vs LinkedHashMap (Java)
+
+| Feature               | HashMap         | TreeMap           | LinkedHashMap     |
+|----------------------|------------------|-------------------|-------------------|
+| Order                | No ordering      | Sorted by key     | Insertion order   |
+| Performance (get/put)| O(1)             | O(log n)          | O(1)              |
+| Null Keys Allowed    | Yes (1 key)      | No                | Yes (1 key)       |
+| Thread Safety        | Not thread-safe  | Not thread-safe   | Not thread-safe   |
+| Use Case             | Fast access      | Sorted access     | Predictable order |
+
+Use **TreeMap** when you need natural key ordering. Use **LinkedHashMap** when you need predictable iteration order. Stick with **HashMap** when speed is your top priority and ordering doesn't matter.
+
