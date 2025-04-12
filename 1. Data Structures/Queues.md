@@ -126,4 +126,61 @@ public class Main {
     System.out.println(queue.isEmpty()); // false
   }
 }
+```
+---
+
+Common Queue Methods
+JavaScript Queue Methods
+Method	Description	Example
+enqueue(element)	Add element to the queue	queue.enqueue(10)
+dequeue()	Remove and return the front element	queue.dequeue()
+peek()	View the front element	queue.peek()
+isEmpty()	Check if the queue is empty	queue.isEmpty()
+size()	Get the size of the queue	queue.size()
+clear()	Remove all elements	queue.clear()
+Java Queue Methods
+Method	Description	Example
+add(element)	Add element to the queue	queue.add(10)
+poll()	Remove and return the front element	queue.poll()
+peek()	View the front element	queue.peek()
+isEmpty()	Check if the queue is empty	queue.isEmpty()
+size()	Get the size of the queue	queue.size()
+Real-World Use Cases of Queues
+Task Scheduling: Executing tasks in the order they arrive (e.g., print jobs, process scheduling).
+
+Data Buffering: Buffers like network streams, video/audio streaming use queues to manage data.
+
+Breadth-First Search (BFS): Used in graph traversal to explore nodes level by level.
+
+Simulation Systems: Queueing systems for customers in service-based industries (banks, restaurants).
+
+Event Handling: Managing events in GUI or game loops, such as processing user input in order.
+
+Types of Queues
+1. Circular Queue
+A Circular Queue is a queue where the last element is connected to the first one. This is useful for managing a fixed-size buffer, preventing the queue from becoming too full. The rear and front pointers wrap around to the beginning when they reach the end.
+
+2. Priority Queue
+In a Priority Queue, elements are dequeued based on priority, not on the order they were enqueued. Higher priority elements are dequeued before lower priority ones. This is often implemented using a heap data structure.
+
+3. Double-Ended Queue (Deque)
+A Deque allows insertion and removal of elements from both ends, making it more flexible than a standard queue. Operations like enqueue and dequeue can happen at both the front and rear ends.
+
+When to Use a Queue?
+Task Scheduling: When tasks need to be processed in the order they were received.
+
+Data Processing Pipelines: To handle data elements in a stream-like fashion, e.g., network data.
+
+Buffer Management: For managing resources that can be used by one process at a time.
+
+BFS Traversal: For exploring nodes level by level in graphs or trees.
+
+Queue vs Stack vs HashMap
+Feature	Queue	Stack	HashMap
+Order	FIFO	LIFO	Unordered
+Operations	Enqueue, Dequeue, Peek, IsEmpty	Push, Pop, Peek, IsEmpty	Set, Get, ContainsKey, Delete
+Use Case	Task scheduling, buffering, BFS	Undo operations, backtracking	Fast key-value lookups, caching
+Time Complexity	O(1) for Enqueue and Dequeue	O(1) for Push and Pop	O(1) for Get, Put, Remove
+
+
 
