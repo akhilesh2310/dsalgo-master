@@ -58,6 +58,45 @@ map.clear();
 ```
 
 ---
+## 🧩 Using Object as a Hash Map in JavaScript
+
+While `Map` is more feature-rich and predictable, JavaScript's plain **Object** can also be used as a simple hash map:
+
+```js
+const obj = {};
+
+// ✅ Add key-value pairs
+obj["name"] = "Alice";
+obj["age"] = 25;
+
+// ✅ Get values
+console.log(obj["name"]); // Alice
+
+// ✅ Check key existence
+console.log("age" in obj); // true
+
+// ✅ Delete a key
+delete obj["age"];
+
+// ✅ Iterate over keys and values
+for (let key in obj) {
+  if (obj.hasOwnProperty(key)) {
+    console.log(`${key} => ${obj[key]}`);
+  }
+}
+```
+---
+
+### ⚠️ When to Use:
+**Object works well for string-only keys.**
+
+**Prefer Map when:**
+
+- You need non-string keys (like objects or functions).
+- You need reliable key ordering.
+- You want better performance in insertion and deletion.
+- You want to avoid key collision with object prototype methods.
+---
 
 ## 🔪 Java Examples Using `HashMap`
 
