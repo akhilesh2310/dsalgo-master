@@ -2,7 +2,8 @@
 
 ## 🔍 What is a Heap?
 
-A **Heap** is a special tree-based data structure that satisfies the **heap property**. There are two main types of heaps:
+A **Heap** is a special tree-based data structure that satisfies the **heap property**. [What is Heap Property?](#-what-is-heap-property) 
+There are two main types of heaps:
 
 - **Max Heap**: The key at the root is greater than or equal to the keys of its children, and the same property must be recursively true for all nodes in the binary tree.
 - **Min Heap**: The key at the root is less than or equal to the keys of its children, and the same property must be recursively true for all nodes in the binary tree.
@@ -304,6 +305,67 @@ public class Main {
 - Objects don’t implement Comparable.
 - You need a different sort order than natural.
 - You’re dealing with complex data types.
+
+---
+
+# 📚 What is Heap Property?
+
+In the **Heap data structure**, the **heap property** defines the order of elements within the tree:
+
+---
+
+## ✅ Heap Property Explained
+
+A **Heap** is a complete binary tree that satisfies either of the following **heap properties**:
+
+### 🔼 Min-Heap Property:
+- The **value of the parent node is less than or equal to the values of its children**.
+- The **minimum element is always at the root**.
+- Useful when you always need the smallest element quickly.
+
+**Example:**
+ ```
+        5
+      /   \
+    10     15
+  /   \
+20     25
+```
+
+### 🔽 Max-Heap Property:
+- The **value of the parent node is greater than or equal to the values of its children**.
+- The **maximum element is always at the root**.
+- Useful when you always need the largest element quickly.
+
+**Example:**
+
+  ```
+     50
+   /    \
+  30     40
+ /  \
+10   20
+```
+---
+
+## 💡 Notes
+
+- The heap property **only guarantees order between parent and children**, not across the entire level.
+- **Heap is not a sorted structure** — it's optimized for quick access to the min or max (depending on the type).
+- Commonly implemented using arrays.
+
+---
+
+## ⏱️ Time Complexities (Using Heap Property)
+
+| Operation       | Time Complexity |
+|----------------|------------------|
+| Insert         | O(log n)         |
+| Get Min/Max    | O(1)             |
+| Remove Min/Max | O(log n)         |
+
+---
+
 
 
 
