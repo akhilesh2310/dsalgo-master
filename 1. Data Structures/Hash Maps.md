@@ -26,9 +26,6 @@ A **Hash Map** is a data structure that stores data in **key-value pairs** for f
 | Delete    | O(1)         | O(n)       |
 
 ---
-## ⚙️ Built-in Methods
-- JS: Map(), Object
-- Java: HashMap
 
 ## 🔪 JavaScript Examples Using `Map`
 
@@ -109,31 +106,35 @@ public class Main {
 
 ## 📜 Common Methods
 
+### ⚙️ Built-in Methods
+- JS: Map(), Object
+- Java: HashMap
+
 ### JavaScript: Map
 
-| Method       | Description           | Example                        |
-|--------------|------------------------|--------------------------------|
-| set(key, val) | Add/Update key-value   | map.set("a", 10)               |
-| get(key)      | Get value by key       | map.get("a")                  |
-| has(key)      | Check if key exists    | map.has("a")                  |
-| delete(key)   | Remove key             | map.delete("a")               |
-| size          | Number of elements     | map.size                       |
-| clear()       | Remove all entries     | map.clear()                    |
-| forEach()     | Iterate over entries   | map.forEach((v, k) => ...)     |
+| Method        | Description          | Example                    |
+| ------------- | -------------------- | -------------------------- |
+| set(key, val) | Add/Update key-value | map.set("a", 10)           |
+| get(key)      | Get value by key     | map.get("a")               |
+| has(key)      | Check if key exists  | map.has("a")               |
+| delete(key)   | Remove key           | map.delete("a")            |
+| size          | Number of elements   | map.size                   |
+| clear()       | Remove all entries   | map.clear()                |
+| forEach()     | Iterate over entries | map.forEach((v, k) => ...) |
 
 ### Java: HashMap
 
-| Method            | Description           | Example                                  |
-|-------------------|------------------------|------------------------------------------|
-| put(key, val)     | Add/Update key-value   | map.put("a", 10)                         |
-| get(key)          | Get value by key       | map.get("a")                            |
-| containsKey(key)  | Check if key exists    | map.containsKey("a")                    |
-| remove(key)       | Remove key             | map.remove("a")                         |
-| size()            | Number of elements     | map.size()                               |
-| clear()           | Remove all entries     | map.clear()                              |
-| keySet()          | Get all keys           | for (String key : map.keySet())         |
-| values()          | Get all values         | for (String val : map.values())         |
-| entrySet()        | Get key-value pairs    | for (Map.Entry<String, String> e : ...) |
+| Method           | Description          | Example                                  |
+| ---------------- | -------------------- | ---------------------------------------- |
+| put(key, val)    | Add/Update key-value | map.put("a", 10)                         |
+| get(key)         | Get value by key     | map.get("a")                             |
+| containsKey(key) | Check if key exists  | map.containsKey("a")                     |
+| remove(key)      | Remove key           | map.remove("a")                          |
+| size()           | Number of elements   | map.size()                               |
+| clear()          | Remove all entries   | map.clear()                              |
+| keySet()         | Get all keys         | for (String key : map.keySet())          |
+| values()         | Get all values       | for (String val : map.values())          |
+| entrySet()       | Get key-value pairs  | for (Map.Entry\<String, String> e : ...) |
 
 ---
 
@@ -150,3 +151,23 @@ public class Main {
 9. **Session Management**: Storing session data for users.
 10. **Graph Representations**: Adjacency list for graphs.
 
+---
+
+## 🧠 Hash Map Interview Tips
+
+1. Understand how **hash functions** affect performance.
+2. Be ready to handle **collisions** — explain chaining and open addressing.
+3. Practice using **custom objects as keys** (and how to override `equals` and `hashCode` in Java).
+4. Analyze **space vs. time trade-offs**, especially when dealing with large data.
+5. Be familiar with **rehashing** and **load factor impact** on performance.
+6. Practice problems like:
+   - Two Sum
+   - Group Anagrams
+   - LRU Cache
+   - Longest Substring Without Repeating Characters
+7. Always clarify **key type**, possible **duplicate values**, and **expected operations** before coding.
+8. Prefer `Map` (JS) or `HashMap` (Java) over arrays when key-based access is needed.
+9. Understand when to use **LinkedHashMap** (Java) for maintaining insertion order.
+10. Know limitations — **not thread-safe** (use `ConcurrentHashMap` if needed).
+
+---
