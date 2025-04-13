@@ -192,15 +192,17 @@ console.log(squared); // [1, 4, 9, 16]
 | **Syntax Simplicity**      | Verbose                           | Concise                        |
 
 ---
-
 ## 📚 Related Data Structures
 
-| Java                 | JavaScript         |
-|----------------------|--------------------|
-| LinkedList           | Set                |
-| Vector               | Map                |
-| Stack                | TypedArray         |
-| Queue                |                    |
+| Java Structure      | Example                                                                 | JavaScript Structure  | Example                                                                                           |
+|---------------------|-------------------------------------------------------------------------|------------------------|---------------------------------------------------------------------------------------------------|
+| `LinkedList`        | `LinkedList<String> list = new LinkedList<>(); list.add("A");`          | `Set`                  | `const s = new Set([1, 2, 2, 3]); // Set(3) {1, 2, 3}`                                            |
+| `Vector`            | `Vector<Integer> v = new Vector<>(); v.add(10);`                        | `Map`                  | `const m = new Map(); m.set('key', 'value'); // Map(1) {'key' => 'value'}`                         |
+| `Stack`             | `Stack<Integer> stack = new Stack<>(); stack.push(5);`                  | `Array (as Stack)`     | `const stack = []; stack.push(5); stack.pop(); // []`                                              |
+| `Queue`             | `Queue<String> q = new LinkedList<>(); q.offer("Hi");`                  | `Array (as Queue)`     | `const queue = []; queue.push("Hi"); queue.shift(); // []`                                         |
+|                     |                                                                         | `Deque` (double-ended) | `const dq = []; dq.unshift("start"); dq.push("end"); // ["start", "end"]`                        |
+| `PriorityQueue`     | `PriorityQueue<Integer> pq = new PriorityQueue<>(); pq.add(1);`         | `Custom Heap/Library`  | `const heap = require('heap'); const pq = new heap.MinHeap(); pq.push(1); // Custom priority queue` |
+
 
 ---
 
