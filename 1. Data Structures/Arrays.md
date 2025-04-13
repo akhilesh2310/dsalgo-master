@@ -91,7 +91,8 @@ ArrayList<String> colors = new ArrayList<>();
 colors.add("Red");
 colors.add("Green");
 System.out.println(colors.get(0));
-colors.remove("Green");
+colors.set(1, "Blue");
+colors.remove("Blue");
 ```
 
 ---
@@ -122,29 +123,29 @@ console.log(squared); // [1, 4, 9, 16]
 
 ## 🛠️ Common Methods
 
-| Category               | Method/Function                | Description                                      |
-|------------------------|--------------------------------|--------------------------------------------------|
-| **Java Arrays**        | Arrays.sort(arr)              | Sorts the array in ascending order               |
-|                        | Arrays.copyOf(arr, newLength) | Copies the array to a new one with new length    |
-|                        | Arrays.equals(arr1, arr2)     | Checks if two arrays are equal                   |
-|                        | Arrays.fill(arr, value)       | Fills the array with the specified value         |
-| **Java ArrayList**     | add(value)                    | Appends an element to the list                   |
-|                        | set(index, value)            | Replaces the element at the specified index       |
-|                        | remove(index)                 | Removes the element at the given index           |
-|                        | get(index)                    | Retrieves element at the index                   |
-|                        | contains(value)               | Checks if list contains the value                |
-|                        | size()                        | Returns the number of elements                   |
-| **JavaScript Arrays**  | push()                        | Adds element(s) to end                           |
-|                        | pop()                         | Removes last element                             |
-|                        | shift()                       | Removes first element                            |
-|                        | unshift()                     | Adds element(s) to beginning                     |
-|                        | splice()                      | Adds/removes at specific index                   |
-|                        | slice()                       | Returns portion of the array                     |
-|                        | map()                         | Transforms each element                          |
-|                        | filter()                      | Filters elements based on condition              |
-|                        | reduce()                      | Reduces to single value using accumulator        |
-|                        | indexOf()                     | Returns index of first occurrence                |
-|                        | includes()                    | Checks if array contains the value               |
+| Category           | Method                          | Description                                       |
+|-------------------|----------------------------------|---------------------------------------------------|
+| **Java Arrays**   | Arrays.sort(arr)                 | Sorts the array in ascending order               |
+|                   | Arrays.copyOf(arr, newLength)    | Copies array into a new array with new length    |
+|                   | Arrays.equals(arr1, arr2)        | Checks if two arrays are equal                   |
+|                   | Arrays.fill(arr, value)          | Fills the array with a specific value            |
+| **Java ArrayList**| add(value)                       | Appends an element to the end of the list        |
+|                   | remove(index)                    | Removes the element at the given index           |
+|                   | get(index)                       | Retrieves element at the index                   |
+|                   | set(index, value)                | Replaces the element at the given index          |
+|                   | contains(value)                  | Checks if list contains the value                |
+|                   | size()                           | Returns the number of elements                   |
+| **JavaScript**    | push()                           | Adds element(s) to the end of the array          |
+|                   | pop()                            | Removes the last element                         |
+|                   | shift()                          | Removes the first element                        |
+|                   | unshift()                        | Adds element(s) to the beginning                 |
+|                   | splice()                         | Adds/removes at specific index                   |
+|                   | slice()                          | Returns a portion of the array                   |
+|                   | map()                            | Creates new array by applying function to each element |
+|                   | filter()                         | Filters elements based on a condition            |
+|                   | reduce()                         | Reduces to a single value using an accumulator   |
+|                   | indexOf()                        | Returns index of the first occurrence            |
+|                   | includes()                       | Checks if array contains a specified value       |
 
 ---
 
@@ -172,6 +173,23 @@ console.log(squared); // [1, 4, 9, 16]
 - Prefer `const` for arrays in JavaScript to avoid accidental reassignments.
 - Use `List` interface in Java for flexible method arguments.
 - Use chaining with methods like `map().filter().reduce()` in JavaScript.
+
+---
+
+## 💡 Java vs JavaScript Summary Table
+
+| Feature                     | Java Arrays                       | JavaScript Arrays              |
+|-----------------------------|-----------------------------------|--------------------------------|
+| **Size**                   | Fixed                             | Dynamic                        |
+| **Type of Elements**       | Same data type                    | Mixed types allowed            |
+| **Resizability**           | Not resizable (use ArrayList)     | Resizable                      |
+| **Built-in Methods**       | Fewer built-in methods            | Rich set of array methods      |
+| **Indexing**               | Zero-based                        | Zero-based                     |
+| **Multidimensional Support** | Supported                         | Supported (nested arrays)      |
+| **Performance**            | Generally faster & memory-efficient | Slower but flexible           |
+| **Higher-order Functions** | Not available in Arrays (use Streams) | Fully supported (e.g., map, filter, reduce) |
+| **Dynamic Behavior**       | Use `ArrayList` or other collections | Built-in                       |
+| **Syntax Simplicity**      | Verbose                           | Concise                        |
 
 ---
 
